@@ -1,0 +1,13 @@
+# Persistent Volume Claim required by our random service
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: csv-report
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 20Mi
+      # Uncomment this when using Minikube
+#  volumeName: sample

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.example.cat.adoption</OriginalElement>
+  <nodes>
+    <node x="0.0" y="232.0">com.example.cat.adoption.model.Report</node>
+    <node x="257.0" y="563.0">com.example.cat.adoption.CatAdoptionHealthIndicator</node>
+    <node x="199.0" y="232.0">com.example.cat.adoption.adapter.JaxbDateAdapter</node>
+    <node x="0.0" y="0.0">com.example.cat.adoption.config.BatchConfig</node>
+    <node x="0.0" y="685.0">com.example.cat.adoption.adapter.JaxbBooleanAdapter</node>
+    <node x="339.0" y="0.0">com.example.cat.adoption.CatAdoptionBatchApplication</node>
+    <node x="0.0" y="563.0">com.example.cat.adoption.step.FilterReportProcessor</node>
+    <node x="367.0" y="441.0">com.example.cat.adoption.listener.JobCompletionListener</node>
+    <node x="0.0" y="441.0">com.example.cat.adoption.CatAdoptionBatchApplicationTest</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic Group" zoom="0.6222791293213829" x="310.0" y="380.5" />
+  <SelectedNodes>
+    <node>com.example.cat.adoption.model.Report</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

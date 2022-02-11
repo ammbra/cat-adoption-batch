@@ -1,0 +1,62 @@
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  annotations:
+    jkube.io/scm-tag: HEAD
+    jkube.io/scm-url: git://github.com/ammbra/cat-adoption-batch.git
+  labels:
+    app: cat-adoption-batch
+    provider: jkube
+    version: 0.0.1-SNAPSHOT
+    group: com.example.cat.adoption
+  name: cat-adoption-batch
+spec:
+  template:
+    metadata:
+      labels:
+        app: cat-adoption-batch
+        provider: jkube
+        version: 0.0.1-SNAPSHOT
+        group: com.example.cat.adoption
+    spec:
+      restartPolicy: Never
+      containers:
+        - env:
+            - name: KUBERNETES_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+            - name: HOSTNAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+          image: quay.io/anasandbox/cat-adoption-batch:0.0.1-SNAPSHOT
+          imagePullPolicy: Always
+          livenessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /actuator/health
+              port: 8080
+              scheme: HTTP
+            initialDelaySeconds: 180
+            successThreshold: 1
+          name: anasandbox-cat-adoption-batch
+          readinessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /actuator/health
+              port: 8080
+              scheme: HTTP
+            initialDelaySeconds: 10
+            successThreshold: 1
+          securityContext:
+            privileged: false
+          volumeMounts:
+            - mountPath: /csv
+              name: transformer-volume
+              readOnly: false
+      volumes:
+        - name: transformer-volume
+          persistentVolumeClaim:
+            claimName: csv-report
