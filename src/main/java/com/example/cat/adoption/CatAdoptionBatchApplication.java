@@ -68,10 +68,6 @@ public class CatAdoptionBatchApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		JobParameters jobParameters = new JobParametersBuilder().addLong(TIME, System.currentTimeMillis())
-				.toJobParameters();
-		JobExecution execution = jobLauncher().run(processJob, jobParameters);
-		LOGGER.info("Exit Status {}", execution.getStatus());
 		LOGGER.info("Done");
 		SpringApplication.exit(context);
 	}

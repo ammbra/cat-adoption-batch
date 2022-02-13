@@ -10,4 +10,4 @@ spec:
     requests:
       storage: 20Mi
       # Uncomment this when using Minikube
-#  volumeName: sample
+  volumeName: sample

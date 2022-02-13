@@ -26,6 +26,7 @@
 		<jkube.enricher.jkube-controller.type>job</jkube.enricher.jkube-controller.type>
 		<jkube.generator.name>${registry}/${repository}/${project.artifactId}:${project.version}</jkube.generator.name>
 		<jaxb.version>2.3.3</jaxb.version>
+		<java.version>17</java.version>
 	</properties>
 
 	<dependencies>
@@ -108,7 +109,6 @@
 				<artifactId>kubernetes-maven-plugin</artifactId>
 				<version>${jkube.version}</version>
 				<configuration>
-					<!--					<buildStrategy>jib</buildStrategy>-->
 					<resources>
 						<imagePullPolicy>Always</imagePullPolicy>
 						<volumes>

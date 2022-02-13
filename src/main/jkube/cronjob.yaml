@@ -22,6 +22,17 @@ spec:
             metadata:
               name: xml-transformer-to-csv
             spec:
+              initContainers:
+                - command:
+                    - chmod
+                    - "777"
+                    - /csv
+                  image: busybox
+                  imagePullPolicy: IfNotPresent
+                  name: jkube-volume-permission
+                  volumeMounts:
+                    - mountPath: /csv
+                      name: transformer-volume
               containers:
                 - image: quay.io/anasandbox/cat-adoption-batch:0.0.1-SNAPSHOT
                   name: xml-transformer-to-csv

@@ -1,6 +1,7 @@
 package com.example.cat.adoption.config;
 
 import com.example.cat.adoption.model.Record;
+import com.example.cat.adoption.step.FilterRecordProcessor;
 import com.example.cat.adoption.step.FilterReportProcessor;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.JobExecutionListener;
@@ -103,7 +104,7 @@ public class BatchConfig {
 
 		return stepBuilderFactory
 				.get("step2").chunk(5)
-				.reader(reader)
+				.reader(reader).processor(new FilterRecordProcessor())
 				.writer(writer())
 				.build();
 	}
