@@ -17,7 +17,7 @@ Locally you can check the input in [report.xml](src/main/resources/xml/report.xm
 
 ### Building and pushing the container image
 
-Before executing this step, connect to your container image registry and fill in your repository details in [pom.xml]:
+Before executing this step, connect to your container image registry and fill in your repository details in [pom.xml](pom.xml):
 
 ````
 <registry>[your_registry here]</registry>
