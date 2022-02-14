@@ -19,10 +19,10 @@ Locally you can check the input in [report.xml](src/main/resources/xml/report.xm
 
 Before executing this step, connect to your container image registry and fill in your repository details in [pom.xml]:
 
-``
+````
 <registry>[your_registry here]</registry>
 <repository>[your_repo_here]</repository>
-``
+````
 
 You can package your jar application, build and push the container image by running:
 
