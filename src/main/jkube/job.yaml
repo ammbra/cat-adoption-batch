@@ -2,14 +2,6 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  annotations:
-    jkube.io/scm-tag: HEAD
-    jkube.io/scm-url: git://github.com/ammbra/cat-adoption-batch.git
-  labels:
-    app: cat-adoption-batch
-    provider: jkube
-    version: 0.0.1-SNAPSHOT
-    group: com.example.cat.adoption
   name: cat-adoption-batch
 spec:
   template:
@@ -22,8 +14,7 @@ spec:
     spec:
       restartPolicy: OnFailure
       containers:
-        - image: quay.io/anasandbox/cat-adoption-batch:0.0.1-SNAPSHOT
-          command:
+        - command:
             - java
             - -jar
             - app.jar

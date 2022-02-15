@@ -20,7 +20,8 @@ import static org.junit.Assert.assertEquals;
 @RunWith(SpringRunner.class)
 @SpringBatchTest
 @EnableAutoConfiguration
-@SpringBootTest()
+@ContextConfiguration(classes = { BatchConfig.class })
+@SpringBootTest
 public class CatAdoptionBatchApplicationTest {
 
 	@Autowired
@@ -39,7 +40,6 @@ public class CatAdoptionBatchApplicationTest {
 		JobParameters jobParameters = new JobParametersBuilder().addLong(CatAdoptionBatchApplication.TIME, System.currentTimeMillis())
 				.toJobParameters();
 		JobExecution jobExecution = jobLauncherTestUtils.launchJob(jobParameters);
-		JobInstance actualJobInstance = jobExecution.getJobInstance();
 		ExitStatus actualJobExitStatus = jobExecution.getExitStatus();
 		assertEquals(ExitStatus.COMPLETED, actualJobExitStatus);
 	}
