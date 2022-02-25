@@ -22,7 +22,7 @@
 		<reactor-core.version>3.3.9.RELEASE</reactor-core.version>
 		<registry>quay.io</registry>
 		<repository>anasandbox</repository>
-		<jkube.version>1.6.0</jkube.version>
+		<jkube.version>1.7.0</jkube.version>
 		<jkube.enricher.jkube-controller.type>job</jkube.enricher.jkube-controller.type>
 		<jkube.generator.name>${registry}/${repository}/${project.artifactId}:${project.version}</jkube.generator.name>
 		<jaxb.version>2.3.3</jaxb.version>
